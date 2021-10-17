@@ -37,3 +37,42 @@
     font-size: 2vw;
     text-decoration: none;
 }
+
+#intro
+{
+    background-image: url(media/foto1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vw;
+}
+
+#intro h1
+{
+    font-size: 6vw;
+    text-align: center;
+}
+
+#intro ul, #intro p
+{
+    font-size: 3vw;
+    margin: 0 20vw;
+    background-color: #ffffff70;
+    line-height: 1.5;
+    list-style-position: inside;
+}
+
+#contenedorCarrito
+{
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    width: 7vw;
+    height: 7vw;
+    margin-left: 7vw;
+    padding: 9px;
+}
+
+#iconoCarrito
+{
+    width: 5vw;
+}
