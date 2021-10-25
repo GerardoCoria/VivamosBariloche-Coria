@@ -130,7 +130,7 @@ p span{
     align-content: center;
 }
 
-#contador span{
+#contador input{
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
@@ -141,6 +141,8 @@ p span{
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
+    border: none;
+    outline: none;
 }
 
 #contador button{
