@@ -10,6 +10,7 @@
 
 :root{
     --colorAzulado:#0dabc7;
+    --colorVerdoso: #042e0d;
 }
 
 #encabezado{
@@ -114,6 +115,7 @@ p span{
 #botonera h3{
     /* grid-area: h3; */
     font-size: 2.5vw;
+    text-align: center;
 }
 
 #botonera p{
@@ -160,4 +162,59 @@ p span{
     margin: auto;
     justify-self: center;
     font-size: 2vw;
+}
+
+#spinner{
+    position: relative;
+    width: 10vw;
+    left: 45vw;
+}
+
+#cargando{
+    text-align: center;
+    font-weight: bold;
+    color: var(--colorVerdoso);
+}
+
+#subTitulo{
+    text-align: center;
+    font-size: 3vw;
+}
+
+#productosPintados{
+    display: flex;
+    justify-content: space-evenly;
+    background: radial-gradient(circle, #0dabc7, #052e05);
+}
+
+.itemsIntro{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background: black;
+    color: white;
+    width: 20vw;
+    height: 30vw;
+    margin: 2vw auto;
+    font-size: 2.5vw;
+    border-radius: 20px;
+}
+
+.itemsIntro img{
+    height: 15vw;
+    width: 15vw;
+    object-fit: cover;
+    margin: 2vw;
+}
+
+.itemsIntro p{
+    position: absolute;
+    top:25vw;
+    padding: 0 2vw;
+    border-radius: 20px;
+}
+
+.itemsIntro span{
+    color: yellow
 }

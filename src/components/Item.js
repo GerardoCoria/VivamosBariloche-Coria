@@ -1,8 +1,5 @@
 const MostrarProducto = (props) =>
     <div>
-        <p>El producto elegido es:</p>
-        <div>{props.producto}</div>
+        <div>{props.pintar}</div>
     </div>
-    
-
 export default MostrarProducto
