@@ -2,16 +2,25 @@
     {
         "id":1,
         "nombre":"Hotel",
-        "precio":"$10.000"
+        "precio":"$10.000",
+        "img": "../media/hotel.jpg"
     },
     {
         "id":2,
         "nombre":"Aéreo",
-        "precio":"$40.000"
+        "precio":"$40.000",
+        "img":"../media/aereo.jpg"
     },
     {
         "id":3,
         "nombre":"Excursión",
-        "precio":"$8.000"
+        "precio":"$8.000",
+        "img": "../media/excursion.jpg"
+    },
+    {
+        "id":4,
+        "nombre":"Bares",
+        "precio":"$2.000",
+        "img": "../media/bares.jpg"
     }
 ]
