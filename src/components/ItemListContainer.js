@@ -1,16 +1,15 @@
 import Contador from "./ItemCount"
 import ListaProductos from "./ItemList"
 import { useState, useEffect } from "react"
-import Spinner from "../media/spinner.gif"
+// import Loading from "../media/loading.gif"
 import fotoHotel from "../media/hotel.jpg"
 import fotoAereo from "../media/aereo.jpg"
 import fotoExcursion from "../media/excursion.jpg"
 import bares from "../media/bares.jpg"
 
-
 const Intro = (props) =>{
 
-    //Productos
+    // Productos
     const items =[
         {id:1, nombre:"Hotel",precio:"$10.000", img: fotoHotel},
         {id:2, nombre:"Aéreo", precio:"$40.000", img: fotoAereo},
@@ -26,21 +25,13 @@ const Intro = (props) =>{
         },2000);
     }, []);
 
-    function spinnerCargando() {
-        if(productos.length==0){
-            return(
-                <div>
-                    <img src={Spinner} alt="spinner" id="spinner"/>
-                    <p id="cargando">{"Cargando productos..."}</p>
-                </div> )
-        }
-        else{
-            return(
-              false
-             )
-        }
-    }
 
+    //es una prueba, tengo que ver porque no me cargan las imagenes
+    // useEffect(()=>{
+    //     fetch("https://raw.githubusercontent.com/GerardoCoria/VivamosBariloche-Coria/main/src/components/productos.json")
+    //     .then(response=>response.json())
+    //     .then(productos =>setTimeout(()=>setProductos(productos),2000))
+    //     },[])
 
     return(
     <div id="intro">
@@ -60,18 +51,24 @@ const Intro = (props) =>{
         <Contador minimoDias={1} maximoDias={15}
             confirmar={function(abc){console.log(`Los días elegidos son:${abc}`)}}
         />
-        <h3 id="subTitulo">Algunos de nuestros productos/servicios son:</h3>
-        {spinnerCargando()}
-        <ListaProductos productos={productos}/>
+       
+        <ListaProductos productos={productos} loading= {function (Loading) {
+        if(productos.length==0){
+            return(
+                <div className="loading">
+                    <img src={Loading} alt="loading" />
+                    <p id="cargando">{"Cargando productos..."}</p>
+                </div> )
+                }
+                else{
+                    return(
+                    false
+                    )
+                }
+            }}
+        
+        />
     </div>
     )
 }
 export default Intro
-
-
-    // Promise
-    // const prom = {new Promise((res,rej)=>{    
-    // setTimeout(()=>{res(["hotel","aereo"])},2000)
-    // })} 
-    // prom.then((item)=>{console.log(item)})
-    // prom.catch(()=>{console.log("noooo")})

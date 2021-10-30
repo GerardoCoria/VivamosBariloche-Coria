@@ -52,7 +52,7 @@ nav{
     background-image: url(media/foto1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vw;
+    height: auto;
 }
 
 #intro h1{
@@ -164,27 +164,36 @@ p span{
     font-size: 2vw;
 }
 
-#spinner{
+.loading img{
     position: relative;
-    width: 10vw;
-    left: 45vw;
+    width: 20vw;
+    left: 35vw;
+    top: 5vw;
 }
 
 #cargando{
-    text-align: center;
+    align-self: center;
+    font-size: 2vw;
     font-weight: bold;
-    color: var(--colorVerdoso);
+    color: white;
+    background-color: transparent !important;
 }
 
-#subTitulo{
+.subTitulo{
     text-align: center;
     font-size: 3vw;
+    color: white
+}
+
+.fondoRadial{
+    background: radial-gradient(circle, #0dabc7, #052e05);
+    height: 40vw;
 }
 
 #productosPintados{
     display: flex;
+    height: auto;
     justify-content: space-evenly;
-    background: radial-gradient(circle, #0dabc7, #052e05);
 }
 
 .itemsIntro{
@@ -199,6 +208,7 @@ p span{
     margin: 2vw auto;
     font-size: 2.5vw;
     border-radius: 20px;
+    justify-content: space-evenly;
 }
 
 .itemsIntro img{
@@ -208,13 +218,33 @@ p span{
     margin: 2vw;
 }
 
-.itemsIntro p{
-    position: absolute;
-    top:25vw;
-    padding: 0 2vw;
+.itemsIntro span{
+    color: yellow
+}
+
+#itemDetallado{
+    display: flex;
+    /* position: absolute; */
+    margin: 0;
+    height: 40vw;
+    width: 100%;
+    color: white;
+    justify-content: center;
+    background-color: var(--colorVerdoso);
+}
+
+#aereo {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font-size: 4vw;
+    background-color: white;
     border-radius: 20px;
 }
 
-.itemsIntro span{
-    color: yellow
+#aereo img{
+    width: 40vw;
 }
