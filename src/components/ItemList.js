@@ -12,9 +12,9 @@ const ListaProductos = (props) =>{
             {(props.productos).map((e,i)=>{
                 return(
                     <MostrarProducto id="productosPintados"
-                    pintar={<div key={e.id} className="itemsIntro">
-                                <img src={e.img}/>{e.nombre}
-                                
+                    pintar={<div className="itemsIntro" key={e.id}>
+                                <img src={e.img} alt="img"/>
+                                <span>{e.nombre}</span>
                             </div>}
                     />
                 )

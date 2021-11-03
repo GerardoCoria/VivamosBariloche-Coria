@@ -23,7 +23,7 @@
     margin-left: 3vw;
 }
 
-.titulo{
+#titulo{
     display: inline-block;
     color: white;
     font-size:3.6vw;
@@ -46,6 +46,11 @@ nav{
     text-decoration: none;
     display: inline-block;
     min-width: 20vw;
+}
+
+.active{
+    background-color :#c8c7ab !important;
+    color: #000;
 }
 
 #intro{

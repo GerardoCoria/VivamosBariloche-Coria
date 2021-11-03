@@ -23,7 +23,7 @@ const ContenedorItem =()=>{
     }, []);
 
     function loading (Loading) {
-        if(productos.length==0){
+        if(productos.length===0){
             return(
                 <div className="loading">
                     <img src={Loading} alt="loading"/>
@@ -36,7 +36,6 @@ const ContenedorItem =()=>{
                     )
                 }
             }
-
     function mostrarItem1 (productos){
         if (productos.length>0){
             return(
@@ -57,7 +56,6 @@ const ContenedorItem =()=>{
           />
     </div>)    
 }
-
 export default ContenedorItem
 
 

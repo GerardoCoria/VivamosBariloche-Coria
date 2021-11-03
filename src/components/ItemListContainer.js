@@ -1,27 +1,32 @@
 import Contador from "./ItemCount"
 import ListaProductos from "./ItemList"
 import { useState, useEffect } from "react"
-// import Loading from "../media/loading.gif"
 import fotoHotel from "../media/hotel.jpg"
 import fotoAereo from "../media/aereo.jpg"
 import fotoExcursion from "../media/excursion.jpg"
 import bares from "../media/bares.jpg"
+import { useParams } from "react-router-dom"
 
 const Intro = (props) =>{
-
     // Productos
     const items =[
-        {id:1, nombre:"Hotel",precio:"$10.000", img: fotoHotel},
-        {id:2, nombre:"Aéreo", precio:"$40.000", img: fotoAereo},
-        {id:3, nombre:"Excursión", precio:"$8.000", img: fotoExcursion},
-        {id:4, nombre:"Bares", precio:"$2.000", img: bares},
+        {id:1, nombre:"Aéreo", precio:"$40.000", img: fotoAereo, seccion:1},
+        {id:2, nombre:"Hotel",precio:"$10.000", img: fotoHotel, seccion: 2},
+        {id:3, nombre:"Excursión", precio:"$8.000", img: fotoExcursion, seccion: 3}, 
+        {id:4, nombre:"Bares", precio:"$2.000", img: bares, seccion: 4}
     ]
 
+    const id =useParams()
+    console.log(id)
+    //lo hice con el Find, no con filter
+   const itemFiltrados = items.find(item => item.id == id.id)
+    console.log(itemFiltrados)
+  
     //Hooks
     const [productos, setProductos] = useState([])
     useEffect(() => {
         setTimeout(() => {
-        setProductos(items);
+            setProductos(items)
         },2000);
     }, []);
 
@@ -51,9 +56,8 @@ const Intro = (props) =>{
         <Contador minimoDias={1} maximoDias={15}
             confirmar={function(abc){console.log(`Los días elegidos son:${abc}`)}}
         />
-       
         <ListaProductos productos={productos} loading= {function (Loading) {
-        if(productos.length==0){
+        if(productos.length===0){
             return(
                 <div className="loading">
                     <img src={Loading} alt="loading" />
@@ -65,8 +69,7 @@ const Intro = (props) =>{
                     false
                     )
                 }
-            }}
-        
+            }}    
         />
     </div>
     )
