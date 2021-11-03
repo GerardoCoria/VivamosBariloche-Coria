@@ -10,17 +10,18 @@ import { useParams } from "react-router-dom"
 const Intro = (props) =>{
     // Productos
     const items =[
-        {id:1, nombre:"Aéreo", precio:"$40.000", img: fotoAereo, seccion:1},
+        {id:1, nombre:"Aerolineas", precio:"$40.000", img: fotoAereo, seccion:1},
         {id:2, nombre:"Hotel",precio:"$10.000", img: fotoHotel, seccion: 2},
         {id:3, nombre:"Excursión", precio:"$8.000", img: fotoExcursion, seccion: 3}, 
-        {id:4, nombre:"Bares", precio:"$2.000", img: bares, seccion: 4}
+        {id:4, nombre:"Bares", precio:"$2.000", img: bares, seccion: 4},
+        {id:5, nombre:"Bus", precio:"$10.000", img:fotoAereo , seccion:1},
+        {id:6, nombre:"Flybondi", precio:"$20.000", img: fotoAereo, seccion:1},
     ]
 
-    const id =useParams()
-    console.log(id)
-    //lo hice con el Find, no con filter
-   const itemFiltrados = items.find(item => item.id == id.id)
-    console.log(itemFiltrados)
+//     const {id} =useParams()
+//     console.log(id)
+//    const itemFiltrados = items.filter(item => item.id == id)
+//     console.log(itemFiltrados)
   
     //Hooks
     const [productos, setProductos] = useState([])
@@ -29,7 +30,6 @@ const Intro = (props) =>{
             setProductos(items)
         },2000);
     }, []);
-
 
     //es una prueba, tengo que ver porque no me cargan las imagenes
     // useEffect(()=>{

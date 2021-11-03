@@ -10,15 +10,15 @@ return(
             <BarraMenu/>
                 <Switch>
                     {/* Ruta 1 a la pagina principal */}
-                    <Route exact path="/" component={Intro}>
+                    <Route exact path="/">
                         <Intro estacion = {"verano"} temporada={"2021/22"}/>
                     </Route>
                     {/* Ruta 2 a las secciones*/}
-                    <Route path="/seccion/:id" component={Intro}>
+                    <Route path="/seccion/:id">
                         <Intro estacion = {"verano"} temporada={"2021/22"}/>
                     </Route>
                     {/* Ruta 3 a  los items*/}
-                    <Route path="/item/:id" component={ContenedorItem}>
+                    <Route path="/item/:id">
                         <ContenedorItem/>
                     </Route>
                 </Switch>  

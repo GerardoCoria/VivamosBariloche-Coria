@@ -199,6 +199,9 @@ p span{
     display: flex;
     height: auto;
     justify-content: space-evenly;
+    flex-wrap: wrap;    
+    background: radial-gradient(circle, #0dabc7, #052e05);
+
 }
 
 .itemsIntro{
