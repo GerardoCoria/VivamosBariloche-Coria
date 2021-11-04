@@ -18,18 +18,32 @@ const Intro = (props) =>{
         {id:6, nombre:"Flybondi", precio:"$20.000", img: fotoAereo, seccion:1},
     ]
 
-//     const {id} =useParams()
-//     console.log(id)
-//    const itemFiltrados = items.filter(item => item.id == id)
-//     console.log(itemFiltrados)
+    const {id} =useParams()
+    console.log(id)
+
+    let itemFiltrados
+    
+    if (id){
+       itemFiltrados = items.filter(item => item.seccion == id)
+    }
+    else{
+        //return false
+        itemFiltrados = items
+    }
+//    const itemFiltrados = items.filter(item => item.seccion == id)
+    console.log(itemFiltrados)
   
     //Hooks
     const [productos, setProductos] = useState([])
     useEffect(() => {
-        setTimeout(() => {
-            setProductos(items)
+        setTimeout(() =>{
+            setProductos(itemFiltrados)
         },2000);
-    }, []);
+    }, [id]);
+
+    // if(id){
+    //     setProductos(itemFiltrados)
+    // }
 
     //es una prueba, tengo que ver porque no me cargan las imagenes
     // useEffect(()=>{
