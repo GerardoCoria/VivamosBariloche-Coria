@@ -22,15 +22,13 @@ const Intro = (props) =>{
     console.log(id)
 
     let itemFiltrados
-    
+
     if (id){
        itemFiltrados = items.filter(item => item.seccion == id)
     }
     else{
-        //return false
         itemFiltrados = items
     }
-//    const itemFiltrados = items.filter(item => item.seccion == id)
     console.log(itemFiltrados)
   
     //Hooks

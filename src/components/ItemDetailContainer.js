@@ -19,17 +19,27 @@ const ContenedorItem =()=>{
 ]
 
    const {id} =useParams()
-   console.log(id)
-  const itemFiltrados = items.filter(item => item.id === id)
-   console.log(itemFiltrados)
+    console.log(id)
+//   const itemFiltrados = items.filter(item => item.id === id)
+//    console.log(itemFiltrados)
 
-    //Hooks
-    const [productos, setProductos] = useState([])
-    useEffect(() => {
-        setTimeout(() => {
-        setProductos(items);
-        },2000);
-    }, [id]);
+    let itemFiltrados
+
+    if (id){
+    itemFiltrados = items.filter(item => item.id == id)
+    }
+    else{
+        itemFiltrados = items
+    }
+    console.log(itemFiltrados)
+
+     //Hooks
+     const [productos, setProductos] = useState([])
+     useEffect(() => {
+         setTimeout(() =>{
+             setProductos(itemFiltrados)
+         },2000);
+     }, [id]);
 
     function loading (Loading) {
         if(productos.length===0){
@@ -45,13 +55,13 @@ const ContenedorItem =()=>{
                     )
                 }
             }
-    function mostrarItem1 (productos){
+    function mostrarItem1 (items) {
         if (productos.length>0){
             return(
                     <div id ="aereo">
-                        <div>{items[1].nombre}</div>
-                        <div>{items[1].precio}</div>
-                        <div>{<img src={items[1].img} alt="imagen"/>}</div>
+                        <div>{items[id-1].nombre}</div>
+                        <div>{items[id-1].precio}</div>
+                        <div>{<img src={items[id-1].img} alt="imagen"/>}</div>
                         <button>Comprar</button>
                     </div>       
             )
@@ -61,7 +71,7 @@ const ContenedorItem =()=>{
     return(<div id="itemDetallado">
         {loading(Loading)}
         <ItemDetallado 
-        return={mostrarItem1(productos)}
+        return={mostrarItem1(items)}
           />
     </div>)    
 }

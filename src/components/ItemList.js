@@ -1,5 +1,6 @@
 import MostrarProducto from "./Item"
 import Loading from "../media/loading.gif"
+import { Link } from "react-router-dom"
 
 const ListaProductos = (props) =>{
     
@@ -15,6 +16,9 @@ const ListaProductos = (props) =>{
                     pintar={<div className="itemsIntro" key={e.id}>
                                 <img src={e.img} alt="img"/>
                                 <span>{e.nombre}</span>
+                                <button>
+                                    <Link to={`/items/${e.id}`}>Ver más</Link>
+                                </button>
                             </div>}
                     />
                 )
