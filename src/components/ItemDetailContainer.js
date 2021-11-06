@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react"
-import ItemDetallado from './ItemDetail'
+import ItemDetail from './ItemDetail'
 import Loading from "../media/loading.gif"
-import fotoHotel from "../media/hotel.jpg"
-import fotoAereo from "../media/aereo.jpg"
-import fotoExcursion from "../media/excursion.jpg"
-import bares from "../media/bares.jpg"
 import { useParams } from "react-router"
 
-const ContenedorItem =()=>{
+const ItemDetailContainer =()=>{
    // Productos
    const items =[
-    {id:1, nombre:"Aerolineas", precio:"$40.000", img: fotoAereo, seccion:1},
-    {id:2, nombre:"Hotel",precio:"$10.000", img: fotoHotel, seccion: 2},
-    {id:3, nombre:"Excursión", precio:"$8.000", img: fotoExcursion, seccion: 3}, 
-    {id:4, nombre:"Bares", precio:"$2.000", img: bares, seccion: 4},
-    {id:5, nombre:"Bus", precio:"$10.000", img:fotoAereo , seccion:1},
-    {id:6, nombre:"Flybondi", precio:"$20.000", img: fotoAereo, seccion:1},
+    {id:1, nombre:"Aerolineas", precio:"$40.000", img: "/aereo.jpg", seccion:1},
+    {id:2, nombre:"Hotel",precio:"$10.000", img: "/hotel.jpg", seccion: 2},
+    {id:3, nombre:"Excursión", precio:"$8.000", img: "/excursion.jpg", seccion: 3}, 
+    {id:4, nombre:"Bares", precio:"$2.000", img: "/bares.jpg", seccion: 4},
+    {id:5, nombre:"Bus", precio:"$10.000", img:"/aereo.jpg" , seccion:1},
+    {id:6, nombre:"Flybondi", precio:"$20.000", img: "/aereo.jpg", seccion:1},
 ]
+
 
    const {id} =useParams()
     console.log(id)
@@ -62,7 +59,6 @@ const ContenedorItem =()=>{
                         <div>{items[id-1].nombre}</div>
                         <div>{items[id-1].precio}</div>
                         <div>{<img src={items[id-1].img} alt="imagen"/>}</div>
-                        <button>Comprar</button>
                     </div>       
             )
         }
@@ -70,11 +66,11 @@ const ContenedorItem =()=>{
 
     return(<div id="itemDetallado">
         {loading(Loading)}
-        <ItemDetallado 
+        <ItemDetail 
         return={mostrarItem1(items)}
           />
     </div>)    
 }
-export default ContenedorItem
+export default ItemDetailContainer
 
 

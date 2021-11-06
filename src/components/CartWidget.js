@@ -1,6 +1,6 @@
 import CarritoPng from "../media/carrito.png"
-const IconoCarrito = () => 
+const CartWidget = () => 
 <div id="contenedorCarrito">
     <img src= {CarritoPng} alt="carrito" id="iconoCarrito"/>
 </div>
-export default IconoCarrito
+export default CartWidget

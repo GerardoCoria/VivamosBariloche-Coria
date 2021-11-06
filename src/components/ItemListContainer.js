@@ -1,22 +1,26 @@
-import Contador from "./ItemCount"
-import ListaProductos from "./ItemList"
+import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
-import fotoHotel from "../media/hotel.jpg"
-import fotoAereo from "../media/aereo.jpg"
-import fotoExcursion from "../media/excursion.jpg"
-import bares from "../media/bares.jpg"
 import { useParams } from "react-router-dom"
+import Loading from "../media/loading.gif"
 
-const Intro = (props) =>{
+const ItemListContainer = (props) =>{
     // Productos
+    
     const items =[
-        {id:1, nombre:"Aerolineas", precio:"$40.000", img: fotoAereo, seccion:1},
-        {id:2, nombre:"Hotel",precio:"$10.000", img: fotoHotel, seccion: 2},
-        {id:3, nombre:"Excursión", precio:"$8.000", img: fotoExcursion, seccion: 3}, 
-        {id:4, nombre:"Bares", precio:"$2.000", img: bares, seccion: 4},
-        {id:5, nombre:"Bus", precio:"$10.000", img:fotoAereo , seccion:1},
-        {id:6, nombre:"Flybondi", precio:"$20.000", img: fotoAereo, seccion:1},
+        {id:1, nombre:"Aerolineas", precio:"$40.000", img: "/aereo.jpg", seccion:1},
+        {id:2, nombre:"Hotel",precio:"$10.000", img: "/hotel.jpg", seccion: 2},
+        {id:3, nombre:"Excursión", precio:"$8.000", img: "/excursion.jpg", seccion: 3}, 
+        {id:4, nombre:"Bares", precio:"$2.000", img: "/bares.jpg", seccion: 4},
+        {id:5, nombre:"Bus", precio:"$10.000", img:"/aereo.jpg" , seccion:1},
+        {id:6, nombre:"Flybondi", precio:"$20.000", img: "/aereo.jpg", seccion:1},
     ]
+
+     //es una prueba, tengo que ver porque no me cargan las imagenes
+    // useEffect(()=>{
+    //     fetch("https://raw.githubusercontent.com/GerardoCoria/VivamosBariloche-Coria/main/src/components/productos.json")
+    //     .then(response=>response.json())
+    //     .then(productos =>setTimeout(()=>setProductos(productos),2000))
+    //     },[])
 
     const {id} =useParams()
     console.log(id)
@@ -43,12 +47,7 @@ const Intro = (props) =>{
     //     setProductos(itemFiltrados)
     // }
 
-    //es una prueba, tengo que ver porque no me cargan las imagenes
-    // useEffect(()=>{
-    //     fetch("https://raw.githubusercontent.com/GerardoCoria/VivamosBariloche-Coria/main/src/components/productos.json")
-    //     .then(response=>response.json())
-    //     .then(productos =>setTimeout(()=>setProductos(productos),2000))
-    //     },[])
+   
 
     return(
     <div id="intro">
@@ -65,10 +64,10 @@ const Intro = (props) =>{
             <li><span className="material-icons">restaurant</span>
                 Informarte sobre dónde comer las exquisiteces de la región</li>
         </ul>
-        <Contador minimoDias={1} maximoDias={15}
+        {/* <Contador minimoDias={1} maximoDias={15}
             confirmar={function(abc){console.log(`Los días elegidos son:${abc}`)}}
-        />
-        <ListaProductos productos={productos} loading= {function (Loading) {
+        /> */}
+        <ItemList productos={productos} loading= {function (Loading) {
         if(productos.length===0){
             return(
                 <div className="loading">
@@ -86,4 +85,4 @@ const Intro = (props) =>{
     </div>
     )
 }
-export default Intro
+export default ItemListContainer

@@ -1,9 +1,18 @@
-const ItemDetallado =(props)=>{
+import ItemCount from './ItemCount.js'
+
+const ItemDetail =(props)=>{
+
+    const verProducto=(data)=>{
+        console.log(`son: ${data}`)
+    }
     return(
         <div>
-            <h3 className="subTitulo">Para comenzar, sacá tu pasaje de avión:</h3>
             {props.return}
+            <ItemCount
+            confirmar={verProducto}
+            minimoDias={1} maximoDias={15}
+            />
         </div>
     )
 }
-export default ItemDetallado
+export default ItemDetail

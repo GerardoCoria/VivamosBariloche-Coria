@@ -36,7 +36,7 @@ nav{
     justify-content: space-evenly
 }
 
-#encabezado a{
+nav a{
     background-color: white;
     border-radius: 20px;
     /* padding: 0vw 2vw;
@@ -48,8 +48,14 @@ nav{
     min-width: 20vw;
 }
 
+
+/* #encabezado a:first-child{
+    background-color: none;
+} */
+
+
 .active{
-    background-color :#c8c7ab !important;
+    background-color :#c8c7ab;
     color: #000;
 }
 

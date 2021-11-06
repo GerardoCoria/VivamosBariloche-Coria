@@ -1,5 +1,5 @@
-const MostrarProducto = (props) =>
+const Item = (props) =>
     <div>
         <div>{props.pintar}</div>
     </div>
-export default MostrarProducto
+export default Item
