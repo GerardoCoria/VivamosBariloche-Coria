@@ -4,22 +4,26 @@ import { Link } from "react-router-dom"
 const ItemCount = (props) =>{
 
     // Función para sumar y restar
-    const [contarDias, setContarDias] = useState(props.minimoDias)
+    const [contador, setContador] = useState(props.minimoStock)
     const sumar = (e) =>{
-        if(contarDias<(props.maximoDias)){
-            setContarDias(contarDias+1)
+        if(contador<(props.maximoStock)){
+            setContador(contador+1)
         }
         else{
             return false
         }
     }
     const restar = () =>{
-        if(contarDias>(props.minimoDias)){
-            setContarDias(contarDias-1)
+        if(contador>(props.minimoStock)){
+            setContador(contador-1)
         }
         else{
             return false
         }
+    }
+
+    const confirmar = () =>{
+        props.onAdd(contador)
     }
 
     // Retorno del componente
@@ -27,10 +31,10 @@ const ItemCount = (props) =>{
         <div id="botonera">
             <div id="contador">
                 <button onClick={restar} className="material-icons">remove</button>
-                <input value={contarDias} readOnly/>
+                <input value={contador} readOnly/>
                 <button onClick={sumar} className="material-icons">add</button>
             </div>
-            <button type="submit" onClick={()=>props.confirmar(contarDias)} id="btnConfirmar">
+            <button type="submit" onClick={confirmar} id="btnConfirmar">
                 <Link to="/cart">
                 Confirmar
                 </Link>

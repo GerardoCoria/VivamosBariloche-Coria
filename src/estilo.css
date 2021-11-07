@@ -247,7 +247,7 @@ p span{
     background-color: var(--colorVerdoso);
 }
 
-#aereo {
+#detalle {
     display: flex;
     flex-direction: column;
     width: 50vw;
@@ -259,6 +259,6 @@ p span{
     border-radius: 20px;
 }
 
-#aereo img{
+#detalle img{
     width: 40vw;
 }

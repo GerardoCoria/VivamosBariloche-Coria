@@ -23,7 +23,7 @@ const ItemDetailContainer =()=>{
     let itemFiltrados
 
     if (id){
-    itemFiltrados = items.filter(item => item.id == id)
+    itemFiltrados = items.find(item => item.id == id)
     }
     else{
         itemFiltrados = items
@@ -52,22 +52,23 @@ const ItemDetailContainer =()=>{
                     )
                 }
             }
-    function mostrarItem1 (items) {
-        if (productos.length>0){
-            return(
-                    <div id ="aereo">
-                        <div>{items[id-1].nombre}</div>
-                        <div>{items[id-1].precio}</div>
-                        <div>{<img src={items[id-1].img} alt="imagen"/>}</div>
-                    </div>       
-            )
-        }
-    }
+    // function mostrarItem (items) {
+    //     if (productos.length>0){
+    //         return(
+    //                 <div id ="aereo">
+    //                     <div>{items[id-1].nombre}</div>
+    //                     <div>{items[id-1].precio}</div>
+    //                     <div>{<img src={items[id-1].img} alt="imagen"/>}</div>
+    //                 </div>       
+    //         )
+    //     }
+    // }
 
     return(<div id="itemDetallado">
         {loading(Loading)}
         <ItemDetail 
-        return={mostrarItem1(items)}
+         productos={productos}
+        // mostrarItem={mostrarItem(items)}
           />
     </div>)    
 }

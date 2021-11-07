@@ -1,7 +1,7 @@
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Loading from "../media/loading.gif"
+// import Loading from "../media/loading.gif"
 
 const ItemListContainer = (props) =>{
     // Productos

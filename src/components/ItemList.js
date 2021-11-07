@@ -12,8 +12,8 @@ const ItemList = (props) =>{
             <div id="productosPintados">
             {(props.productos).map((productos)=>{
                 return(
-                    <Item id="productosPintados"
-                    pintar={<div key={productos.id} className="itemsIntro">
+                    <Item key={productos.id} id="productosPintados"
+                    pintar={<div className="itemsIntro">
                                 <img src={productos.img} alt="img"/>
                                 <span>{productos.nombre}</span>
                                 <button>

@@ -2,7 +2,15 @@ import Logo from "../media/bariloche.png"
 import CartWidget from "./CartWidget"
 import {Link, NavLink} from "react-router-dom"
 
-const NavBar = () => 
+// import { useContext } from "react"
+// import {contexto} from "./CartContext"
+
+const NavBar = () =>{
+
+    // const resultado = useContext(contexto)
+    // console.log(resultado)
+
+    return(
     <header id="encabezado">
         <Link to="/">
         <img src= {Logo} alt="bariloche" id="logo"/>
@@ -16,6 +24,7 @@ const NavBar = () =>
             <NavLink to="/seccion/4">Gastronomía local</NavLink>
         </nav>
     </header>
+    )}
 export default NavBar
 
 
