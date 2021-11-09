@@ -178,11 +178,33 @@ p span{
     font-size: 2vw;
 } */
 
+#btnSeguir{
+    width: 100%;
+    background: yellowgreen;
+    color: white;
+    border-radius: 20px;
+    padding: 1vw;
+    margin: 1vw;
+}
+
+#btnConfirmar{
+    width: 100%;
+    background: #042e0d;
+    color: white;
+    border-radius: 20px;
+    padding: 1vw;
+    margin: 1vw;
+}
+
 .loading img{
     position: relative;
     width: 20vw;
     left: 35vw;
     top: 5vw;
+}
+
+#cargando2{
+    color: black;
 }
 
 #cargando{
@@ -206,7 +228,7 @@ p span{
 
 #productosPintados{
     display: flex;
-    height: auto;
+    height: 100vh;
     justify-content: space-evenly;
     flex-wrap: wrap;    
     background: radial-gradient(circle, #0dabc7, #052e05);
@@ -243,8 +265,9 @@ p span{
     display: flex;
     /* position: absolute; */
     margin: 0;
-    height: 40vw;
+    height: 100vh;
     width: 100%;
+    background: linear-gradient(to right, #0dabc7, #052e05);
     color: white;
     justify-content: center;
     background-color: var(--colorVerdoso);

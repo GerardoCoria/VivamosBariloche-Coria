@@ -36,28 +36,23 @@ const ItemDetailContainer =()=>{
          },2000);
      }, [id]);
 
-    function loading (Loading) {
         if(productos.length===0){
             return(
                 <div className="loading">
                     <img src={Loading} alt="loading"/>
-                    <p id="cargando">{"Cargando productos..."}</p>
+                    <p id="cargando2">{"Cargando productos..."}</p>
                 </div> )
                 }
                 else{
                     return(
-                    false
-                    )
-                }
-            }
-
-    return(<div id="itemDetallado">
-        {loading(Loading)}
-        <ItemDetail 
-         productos={productos}
-        // mostrarItem={mostrarItem(items)}
-          />
-    </div>)    
+          
+                    <div id="itemDetallado">
+                        <ItemDetail 
+                        productos={productos}
+                        // mostrarItem={mostrarItem(items)}
+                        />
+                    </div>)
+                }    
 }
 export default ItemDetailContainer
 

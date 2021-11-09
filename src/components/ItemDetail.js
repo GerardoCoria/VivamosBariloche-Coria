@@ -36,7 +36,7 @@ const ItemDetail =({productos})=>{
                     <div>{<img src={productos.img} alt="imagen"/>}</div>
                 </div>
                 <div>
-                    <button onClick={seguirComprando}>Seguir comprando</button>
+                    <button onClick={seguirComprando} id="btnSeguir">Seguir comprando</button>
                     <button onClick={confirmar} id="btnConfirmar">Finalizar compra</button>
                 </div> 
             </div>
