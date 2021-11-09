@@ -8,10 +8,10 @@ const ItemList = (props) =>{
         return(
             <div className= "fondoRadial">
                 <h3 className="subTitulo">Algunos de nuestros productos/servicios son:</h3>
-                {props.loading(Loading)}
+                {props.loading(Loading)}              
             <div id="productosPintados">
             {(props.productos).map((productos)=>{
-                return(
+                return(                    
                     <Item key={productos.id} id="productosPintados"
                     pintar={<div className="itemsIntro">
                                 <img src={productos.img} alt="img"/>

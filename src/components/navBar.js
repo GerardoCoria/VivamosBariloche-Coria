@@ -2,13 +2,8 @@ import Logo from "../media/bariloche.png"
 import CartWidget from "./CartWidget"
 import {Link, NavLink} from "react-router-dom"
 
-// import { useContext } from "react"
-// import {contexto} from "./CartContext"
 
 const NavBar = () =>{
-
-    // const resultado = useContext(contexto)
-    // console.log(resultado)
 
     return(
     <header id="encabezado">

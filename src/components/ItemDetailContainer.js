@@ -14,14 +14,12 @@ const ItemDetailContainer =()=>{
     {id:6, nombre:"Flybondi", precio:"$20.000", img: "/aereo.jpg", seccion:1},
 ]
 
-
    const {id} =useParams()
     console.log(id)
 //   const itemFiltrados = items.filter(item => item.id === id)
 //    console.log(itemFiltrados)
 
     let itemFiltrados
-
     if (id){
     itemFiltrados = items.find(item => item.id == id)
     }
@@ -52,17 +50,6 @@ const ItemDetailContainer =()=>{
                     )
                 }
             }
-    // function mostrarItem (items) {
-    //     if (productos.length>0){
-    //         return(
-    //                 <div id ="aereo">
-    //                     <div>{items[id-1].nombre}</div>
-    //                     <div>{items[id-1].precio}</div>
-    //                     <div>{<img src={items[id-1].img} alt="imagen"/>}</div>
-    //                 </div>       
-    //         )
-    //     }
-    // }
 
     return(<div id="itemDetallado">
         {loading(Loading)}

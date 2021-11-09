@@ -57,6 +57,9 @@ nav a{
 .active{
     background-color :#c8c7ab;
     color: #000;
+    font-weight: bold;
+    transform: scale(1.2)
+
 }
 
 #intro{
@@ -166,14 +169,14 @@ p span{
     margin: 0;
 }
 
-#btnConfirmar{
+/* #btnConfirmar{
     grid-area: confirmar;
     height: 3vw;
     width: 10vw;
     margin: auto;
     justify-self: center;
     font-size: 2vw;
-}
+} */
 
 .loading img{
     position: relative;

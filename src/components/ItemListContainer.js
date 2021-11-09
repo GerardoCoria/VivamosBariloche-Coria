@@ -64,10 +64,9 @@ const ItemListContainer = (props) =>{
             <li><span className="material-icons">restaurant</span>
                 Informarte sobre dónde comer las exquisiteces de la región</li>
         </ul>
-        {/* <Contador minimoDias={1} maximoDias={15}
-            confirmar={function(abc){console.log(`Los días elegidos son:${abc}`)}}
-        /> */}
-        <ItemList productos={productos} loading= {function (Loading) {
+      
+        <ItemList productos={productos} 
+        loading= {function (Loading) {
         if(productos.length===0){
             return(
                 <div className="loading">

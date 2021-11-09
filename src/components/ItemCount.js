@@ -1,7 +1,8 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+
 
 const ItemCount = (props) =>{
+
 
     // Función para sumar y restar
     const [contador, setContador] = useState(props.minimoStock)
@@ -22,7 +23,7 @@ const ItemCount = (props) =>{
         }
     }
 
-    const confirmar = () =>{
+    const agregar=()=>{
         props.onAdd(contador)
     }
 
@@ -34,11 +35,7 @@ const ItemCount = (props) =>{
                 <input value={contador} readOnly/>
                 <button onClick={sumar} className="material-icons">add</button>
             </div>
-            <button type="submit" onClick={confirmar} id="btnConfirmar">
-                <Link to="/cart">
-                Confirmar
-                </Link>
-            </button>
+                <button onClick={agregar}>Agregar al carrito</button>
         </div>
     )
 }

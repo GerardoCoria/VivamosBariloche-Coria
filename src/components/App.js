@@ -3,13 +3,13 @@ import ItemListContainer from "./ItemListContainer"
 import ItemDetailContainer from "./ItemDetailContainer"
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Cart from "./cart"
-
-
+import ComponenteDelContexto from "./CartContext"
 
 const App = () =>{
 return(
     <div>
         <BrowserRouter>
+        <ComponenteDelContexto>
             <NavBar/>
                 <Switch>
                     {/* Ruta 1 a la pagina principal */}
@@ -28,7 +28,8 @@ return(
                     <Route path="/cart">
                         <Cart/>
                     </Route>
-                </Switch>  
+                </Switch>
+        </ComponenteDelContexto>      
         </BrowserRouter>
     </div>
 )}
