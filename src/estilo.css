@@ -119,6 +119,7 @@ p span{
     justify-content: center;
     /* flex-direction:row; */
     flex-direction: column;
+    border-radius: 20px;
     /* grid-template-areas:
     "h3"
     "parr"
@@ -167,6 +168,9 @@ p span{
     padding: .6vw;
     display: inline-flex;
     margin: 0;
+    border-radius: 50%;
+    margin: 0 2vw;
+    background: #af7d09;
 }
 
 /* #btnConfirmar{
@@ -177,8 +181,21 @@ p span{
     justify-self: center;
     font-size: 2vw;
 } */
+#btnAgregar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #b484b2;
+    border-radius: 20px;
+    padding: 1vw;
+    margin: 1vw 0;
+}
 
 #btnSeguir{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     background: yellowgreen;
     color: white;
@@ -188,6 +205,9 @@ p span{
 }
 
 #btnConfirmar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     background: #042e0d;
     color: white;

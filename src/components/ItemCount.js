@@ -35,7 +35,10 @@ const ItemCount = (props) =>{
                 <input value={contador} readOnly/>
                 <button onClick={sumar} className="material-icons">add</button>
             </div>
-                <button onClick={agregar}>Agregar al carrito</button>
+                <button onClick={agregar} id="btnAgregar">
+                    <span class="material-icons">add_shopping_cart</span>
+                    Agregar al carrito
+                </button>
         </div>
     )
 }
