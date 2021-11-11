@@ -13,6 +13,10 @@
     --colorVerdoso: #042e0d;
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
 #encabezado{
     background: linear-gradient(to bottom, #0dabc7, #052e05);
     height: 13vw;
@@ -276,10 +280,18 @@ p span{
     object-fit: cover;
     margin: 2vw;
 }
-
+/* 
 .itemsIntro span{
     color: yellow
+} */
+
+#btnVerMas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
+
 
 #itemDetallado{
     display: flex;

@@ -25,6 +25,7 @@ const ItemCount = (props) =>{
 
     const agregar=()=>{
         props.onAdd(contador)
+        console.log(typeof contador)
     }
 
     // Retorno del componente

@@ -9,22 +9,36 @@ const ComponenteDelContexto =(props)=>{
     const [cart, setCart] = useState([])
 
     //funcion para agregar al carrito, se lee en ItemDetails.js
-    const agregarAlCarrito = (contador, productos)=>{
-        console.log("agregado al carrito!!")
-        //si el producto ya esta en el carrito, solo se le suma uno
-        if(cart.find(item=>item.id===productos.id)){
-            setCart(cart.map(item=>item.id===productos.id?{...item, contador:item.contador+1}:item))}
+    const isInCart = (id)=>{
+        return cart.find(productos=> productos.id === id)
+    }
 
-        else{ setCart([...cart, {contador: contador, productos: productos}])
+    const agregarAlCarrito = (contador, productos)=>{
+        if (isInCart(productos.id)){
+            setCart(cart.map(item=>(
+            item.id === productos.id ? {...item, contador: item.contador + contador} : item)))
+            console.log("ya estaba y sumé cantidad")
         }
-         } 
+        else{
+             setCart([...cart, {
+                id: productos.id,  
+                contador: contador,
+                nombre: productos.nombre,
+                precio: productos.precio,
+            }])
+            console.log("no estaba y lo agregue")
+        }
+        }
 
     //para eliminar del carrito
-    const eliminarDelCarrito = (contador, productos)=>{
+    const eliminarDelCarrito = (id)=>{
+        const cartAux=cart.filter(productos=> productos.id !== id)
+        setCart(cartAux)
         console.log("eliminado del carrito!!")
+        console.log(id)
     }
     //para resetear el carrito
-    const vaciarCarrito = (contador, productos)=>{
+    const vaciarCarrito = ()=>{
         console.log("vaciando carrito!!")
         setCart([]) 
     }   

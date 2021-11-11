@@ -16,8 +16,11 @@ const ItemList = (props) =>{
                     pintar={<div className="itemsIntro">
                                 <img src={productos.img} alt="img"/>
                                 <span>{productos.nombre}</span>
-                                <button>
-                                    <Link to={`/items/${productos.id}`}>Ver más</Link>
+                                <button id="btnVerMas">
+                                    <Link to={`/items/${productos.id}`}>
+                                    <span>Ver más</span>
+                                    <span class="material-icons">visibility</span>
+                                    </Link>
                                 </button>
                             </div>}
                     />

@@ -1,5 +1,5 @@
 import ItemCount from './ItemCount.js'
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useContext } from "react"
 import {contexto} from "./CartContext"
 import { useHistory } from 'react-router-dom'
@@ -16,7 +16,6 @@ const ItemDetail =({productos})=>{
     const onAdd=(contador)=>{
          agregarAlCarrito(contador, productos)
         setRenderizar(true)
-        console.log(renderizar)
     }
 
     const seguirComprando=()=>{
@@ -37,11 +36,11 @@ const ItemDetail =({productos})=>{
                 </div>
                 <div>
                     <button onClick={seguirComprando} id="btnSeguir">
-                    <span class="material-icons">home</span>
+                    <span className="material-icons">home</span>
                         Seguir comprando
                     </button>
                     <button onClick={confirmar} id="btnConfirmar">
-                    <span class="material-icons">paid</span>
+                    <span className="material-icons">paid</span>
                         Finalizar compra
                     </button>
                 </div> 
