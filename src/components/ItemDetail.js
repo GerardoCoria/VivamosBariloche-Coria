@@ -52,7 +52,7 @@ const ItemDetail =({productos})=>{
             <div>
                 <div id ="detalle">
                     <div>{productos.nombre}</div>
-                    <div>{productos.precio}</div>
+                    <div>$ {productos.precio}</div>
                     <div>{<img src={productos.img} alt="imagen"/>}</div>
                 </div>
                 <ItemCount 

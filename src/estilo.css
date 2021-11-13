@@ -101,17 +101,28 @@ p span{
 }
 
 #contenedorCarrito{
-    display: inline-block;
-    background-color: white;
-    border-radius: 50%;
-    width: 7vw;
+    display: inline-flex;
+    width: 13vw;
     height: 7vw;
-    margin-left: 7vw;
+    margin-left: 2vw;
     padding: 9px;
 }
 
 #iconoCarrito{
     width: 5vw;
+}
+
+#contadorCarrito{
+    display: inline-flex;
+    background: red;
+    width: 4vw;
+    height: 4vw;
+    font-size: 2vw;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 1vw
+
 }
 
 #botonera {
@@ -284,13 +295,23 @@ p span{
 .itemsIntro span{
     color: yellow
 } */
-
 #btnVerMas{
+    background: black;
+    border: none;
+}
+
+#txtVerMas{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
+    font-size: 2vw;
+    background: black;
 }
+
+/* #btnVerMas .material-icons{
+    margin-right: 0
+} */
 
 
 #itemDetallado{
@@ -319,4 +340,98 @@ p span{
 
 #detalle img{
     width: 40vw;
+}
+
+#tituloCarrito{
+    text-align: center;
+}
+
+#subTituloCarrito{
+    text-align: center;
+}
+
+#divCarrito{
+    display: flex;
+    background: #9e9191;
+    width: 80%;
+    border-radius: 20px;
+    margin: 2vw auto;
+    padding: 2vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#btnEliminar{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+#btnEliminar .material-icons{
+    margin: 0
+}
+
+#btnVaciar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: red;
+    margin: auto;
+    color: white;
+    font-size: 3vw;
+    padding: 1vw;
+}
+
+#cartVacio{
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 5vw;
+}
+
+#imgVacio{
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+}
+
+#divTotal{
+    display: flex;
+    background: black;
+    color: white;
+    width: 80%;
+    margin: 5vw auto;
+    text-align: center;
+    font-size: 4vw;
+    border-radius: 20px;
+    justify-content: space-evenly;
+}
+
+#sumaTotal{
+    background: #cc9348;
+    padding: 0 2vw;
+}
+
+#btnIrInicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: green;
+    padding: 1vw 2vw;
+    border-radius: 20px;
+    margin-left: 35%;
+}
+
+#txtIrInicio{
+    font-size: 3vw;
+    color: white;
 }

@@ -25,6 +25,7 @@ const ComponenteDelContexto =(props)=>{
                 contador: contador,
                 nombre: productos.nombre,
                 precio: productos.precio,
+                img: productos.img
             }])
             console.log("no estaba y lo agregue")
         }
