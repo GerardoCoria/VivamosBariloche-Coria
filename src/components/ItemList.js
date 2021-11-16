@@ -17,7 +17,7 @@ const ItemList = (props) =>{
                                 <img src={productos.img} alt="img"/>
                                 <span>{productos.nombre}</span>
                                 <button id="btnVerMas">
-                                    <Link to={`/items/${productos.id}`}  id="txtVerMas">
+                                    <Link to={`/item/${productos.id}`}  id="txtVerMas">
                                     <span className="material-icons">visibility</span>
                                     <span>Ver más...</span>
                                     </Link>

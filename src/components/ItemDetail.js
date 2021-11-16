@@ -54,6 +54,7 @@ const ItemDetail =({productos})=>{
                     <div>{productos.nombre}</div>
                     <div>$ {productos.precio}</div>
                     <div>{<img src={productos.img} alt="imagen"/>}</div>
+                    <div className="descripcion">{productos.descripcion}</div>
                 </div>
                 <ItemCount 
                 onAdd={onAdd}

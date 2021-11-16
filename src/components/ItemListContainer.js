@@ -1,52 +1,56 @@
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-// import Loading from "../media/loading.gif"
+import { firestore } from "./firebase"
 
 const ItemListContainer = (props) =>{
     // Productos
     
-    const items =[
-        {id:1, nombre:"Aerolineas", precio: 40000, img: "/aereo.jpg", seccion:1},
-        {id:2, nombre:"Hotel",precio: 10000, img: "/hotel.jpg", seccion: 2},
-        {id:3, nombre:"Excursión", precio:8000, img: "/excursion.jpg", seccion: 3}, 
-        {id:4, nombre:"Bares", precio: 2000, img: "/bares.jpg", seccion: 4},
-        {id:5, nombre:"Bus", precio: 10.000, img:"/aereo.jpg" , seccion:1},
-        {id:6, nombre:"Flybondi", precio: 20.000, img: "/aereo.jpg", seccion:1},
-    ]
-     //es una prueba, tengo que ver porque no me cargan las imagenes
-    // useEffect(()=>{
-    //     fetch("https://raw.githubusercontent.com/GerardoCoria/VivamosBariloche-Coria/main/src/components/productos.json")
-    //     .then(response=>response.json())
-    //     .then(productos =>setTimeout(()=>setProductos(productos),2000))
-    //     },[])
-
+    // const items =[
+    //     {id:1, nombre:"Aerolineas", precio: 40000, img: "/aereo.jpg", seccion:1},
+    //     {id:2, nombre:"Hotel",precio: 10000, img: "/hotel.jpg", seccion: 2},
+    //     {id:3, nombre:"Excursión", precio:8000, img: "/excursion.jpg", seccion: 3}, 
+    //     {id:4, nombre:"Bares", precio: 2000, img: "/bares.jpg", seccion: 4},
+    //     {id:5, nombre:"Bus", precio: 10.000, img:"/aereo.jpg" , seccion:1},
+    //     {id:6, nombre:"Flybondi", precio: 20.000, img: "/aereo.jpg", seccion:1},
+    // ]
+   
     const {id} =useParams()
-    console.log(id)
 
-    let itemFiltrados
-
-    if (id){
-       itemFiltrados = items.filter(item => item.seccion == id)
-    }
-    else{
-        itemFiltrados = items
-    }
-    console.log(itemFiltrados)
+   
   
     //Hooks
     const [productos, setProductos] = useState([])
     useEffect(() => {
-        setTimeout(() =>{
-            setProductos(itemFiltrados)
-        },2000);
+
+        // ver como me traigo todo el array de productos aca!!!
+        const items = firestore
+        const itemsProducts = items.collection("productos")
+        itemsProducts.get().then(querySnapshot => {
+            if(querySnapshot.size === 0){
+                console.log("No hay productos")
+            }
+            setProductos(querySnapshot.docs.map(doc => doc.data()))
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+
+        // setTimeout(() =>{
+        //     setProductos(itemFiltrados)
+        // },2000);
     }, [id]);
 
-    // if(id){
-    //     setProductos(itemFiltrados)
-    // }
 
-   
+    let itemFiltrados
+    if (id){
+       itemFiltrados = productos.filter(item => item.seccion == id)
+    }
+    else{
+        itemFiltrados = productos
+    }
+    console.log(itemFiltrados)
 
     return(
     <div id="intro">
@@ -64,7 +68,7 @@ const ItemListContainer = (props) =>{
                 Informarte sobre dónde comer las exquisiteces de la región</li>
         </ul>
       
-        <ItemList productos={productos} 
+        <ItemList productos={itemFiltrados} 
         loading= {function (Loading) {
         if(productos.length===0){
             return(

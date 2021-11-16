@@ -21,7 +21,7 @@ return(
                         <ItemListContainer estacion = {"verano"} temporada={"2021/22"}/>
                     </Route>
                     {/* Ruta 3 a  los items*/}
-                    <Route path="/items/:id">
+                    <Route path="/item/:id">
                         <ItemDetailContainer/>
                     </Route>
                     {/* Ruta 4 */}

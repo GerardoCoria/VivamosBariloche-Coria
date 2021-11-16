@@ -24,8 +24,14 @@ const Cart = () => {
                         <p>Precio/unidad: $ {productos.precio}</p>
                         <p>Cantidad: {productos.contador}</p>
                         <p>Precio/total: $ {productos.precio*productos.contador}</p>
+                        <button>
+                            <Link to={`/item/${productos.id}`} id="btnMas">
+                                <span class="material-icons">add</span>
+                                Agregar más
+                            </Link>
+                        </button>
                         </div>
-                        <img src={productos.img}alt="" width="100px" height="100px"/>
+                        <img src={productos.img}alt="" width="150px" height="150px"/>
                         <button onClick={()=>eliminarDelCarrito(productos.id)} id="btnEliminar">
                             <span class="material-icons">close</span>
                         </button>
