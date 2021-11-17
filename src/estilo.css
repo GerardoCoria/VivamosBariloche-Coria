@@ -68,28 +68,69 @@ nav a{
 
 #intro{
     background-image: url(media/foto1.jpg);
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
+    background-attachment: fixed;
+    height: 30vw; */
 }
 
 #intro h1{
     font-size: 4.6vw;
     text-align: center;
+    color: white;
 }
 
-#intro ul, #intro p{
-    font-size: 2.2vw;
-    margin: 0 15vw;
-    background-color: #ffffff70;
-    line-height: 1.5;
-    list-style: none;
+#intro2{
+    background-image: url(media/centro-civico.jpg);
 }
 
-li{
+#intro, #intro2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 30vw;
+}
+
+#intro2 p{
+    font-size: 3.6vw;
+   color: white;
+   text-align: center;
+}
+
+#intro3{
+    display: flex;
+    padding: 2vw 0;
+    justify-content: space-evenly;
+    background-color: #721c7c;
+    color: white;
+}
+
+#intro3 ul li{
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.3vw;
+    margin-right: 2vw;
+}
+
+#intro3 ul li .material-icons{
+    margin: 0;
+}
+
+#intro3 ul li:last-child{
+    margin-right: 0;
+}
+
+/* #intro2 ul,  */
+/* padding: 0 15vw;
+/* background-color: #ffffff70; */
+/* line-height: 1.5;
+list-style: none;  */
+
+
+/* li{
     display: flex;
     align-items: center;
-}
+} */
 
 .material-icons{
     font-size: 4vw;
@@ -263,12 +304,12 @@ p span{
 
 .fondoRadial{
     background: radial-gradient(circle, #0dabc7, #052e05);
-    height: 70vw;
+    height: auto;
 }
 
 #productosPintados{
     display: flex;
-    height: 100vh;
+    height: auto;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 0 5vw;    
@@ -313,6 +354,7 @@ p span{
     width: 100%;
     font-size: 2vw;
     background: black;
+    color:#c4c463
 }
 
 /* #btnVerMas .material-icons{
@@ -450,9 +492,9 @@ p span{
 }
 
 #btnIrInicio{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     background: green;
     padding: 1vw 2vw;
     border-radius: 20px;
@@ -460,6 +502,7 @@ p span{
 }
 
 #txtIrInicio{
+    display: flex;
     font-size: 3vw;
     color: white;
 }

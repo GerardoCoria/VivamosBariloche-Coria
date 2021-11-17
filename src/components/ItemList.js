@@ -3,7 +3,6 @@ import Loading from "../media/loading.gif"
 import { Link } from "react-router-dom"
 
 const ItemList = (props) =>{
-    
     // Acá va la iteración
         return(
             <div className= "fondoRadial">

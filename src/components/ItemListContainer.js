@@ -4,71 +4,96 @@ import { useParams } from "react-router-dom"
 import { firestore } from "./firebase"
 
 const ItemListContainer = (props) =>{
-    // Productos
     
-    // const items =[
-    //     {id:1, nombre:"Aerolineas", precio: 40000, img: "/aereo.jpg", seccion:1},
-    //     {id:2, nombre:"Hotel",precio: 10000, img: "/hotel.jpg", seccion: 2},
-    //     {id:3, nombre:"Excursión", precio:8000, img: "/excursion.jpg", seccion: 3}, 
-    //     {id:4, nombre:"Bares", precio: 2000, img: "/bares.jpg", seccion: 4},
-    //     {id:5, nombre:"Bus", precio: 10.000, img:"/aereo.jpg" , seccion:1},
-    //     {id:6, nombre:"Flybondi", precio: 20.000, img: "/aereo.jpg", seccion:1},
-    // ]
-   
     const {id} =useParams()
-
-   
+    console.log(id)
   
-    //Hooks
     const [productos, setProductos] = useState([])
     useEffect(() => {
 
-        // ver como me traigo todo el array de productos aca!!!
-        const items = firestore
-        const itemsProducts = items.collection("productos")
-        itemsProducts.get().then(querySnapshot => {
-            if(querySnapshot.size === 0){
-                console.log("No hay productos")
+        // const items = firestore
+        // const itemsProducts = items.collection("productos")
+        // itemsProducts.get().then(querySnapshot => {
+        //     if(querySnapshot.size === 0){
+        //         console.log("No hay productos")
+               
+        //     }
+        //     setProductos(querySnapshot.docs.map(doc =>({...doc.data(),id:doc.id})))
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        // })
+
+        if(id){
+            const items = firestore
+            const itemsProducts = items.collection("productos")
+            const itemSecciones = itemsProducts.where("seccion", "==", id)
+            const consulta = itemSecciones.get()
+            consulta
+            .then(resultado => {
+                if(resultado.size === 0){
+                    console.log("No hay productos")
+                }
+                else{
+                setProductos(resultado.docs.map(doc =>({...doc.data(),id:doc.id})))
+                console.log("ok")
             }
-            setProductos(querySnapshot.docs.map(doc => doc.data()))
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-
-
-        // setTimeout(() =>{
-        //     setProductos(itemFiltrados)
-        // },2000);
+            })
+            
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+        else{
+            const items = firestore
+            const itemsProducts = items.collection("productos")
+            itemsProducts.get().then(resultado => {
+                if(resultado.size === 0){
+                    console.log("No hay productos")
+                }
+                else{
+                setProductos(resultado.docs.map(doc =>({...doc.data(),id:doc.id})))
+                console.log("ok")
+                }
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    
+        }
     }, [id]);
 
-
-    let itemFiltrados
-    if (id){
-       itemFiltrados = productos.filter(item => item.seccion == id)
-    }
-    else{
-        itemFiltrados = productos
-    }
-    console.log(itemFiltrados)
+    // let itemFiltrados
+    
+    // if (id){
+    //    itemFiltrados = productos.filter(item => item.seccion == id)
+    // }
+    // else{
+    //     itemFiltrados = productos
+    // }
+    // console.log(itemFiltrados)
 
     return(
-    <div id="intro">
-        <h1>Bienvenidos al portal de viajes de Bariloche</h1>
+        <>
+        <div id="intro">
+            <h1>Bienvenidos al portal de viajes de Bariloche</h1>        
+        </div>
+        <div id="intro2">
         <p>Te damos la bienvenida a la temporada <span>{props.estacion} {props.temporada}</span></p>
-        <p>Acá podrás:</p>
-        <ul>
+        </div>
+        <div id="intro3">
+        <ul>       
             <li><span className="material-icons">flight_takeoff</span>
-                Comprar tus pasajes aéreos</li>
+                Comprá tus pasajes aéreos</li>
             <li><span className="material-icons">hotel</span>
-                Reservar tu alojamiento a tu medida y gustos</li>
+                Reservá tu alojamiento</li>
             <li><span className="material-icons">add_a_photo</span>
-                Conseguir las mejores excursiones en esta bella ciudad</li>
+                Conseguí las mejores excursiones</li>
             <li><span className="material-icons">restaurant</span>
-                Informarte sobre dónde comer las exquisiteces de la región</li>
+                Probá las exquisiteces de la región</li>
         </ul>
-      
-        <ItemList productos={itemFiltrados} 
+        </div>
+        <ItemList productos={productos} 
         loading= {function (Loading) {
         if(productos.length===0){
             return(
@@ -84,7 +109,8 @@ const ItemListContainer = (props) =>{
                 }
             }}    
         />
-    </div>
+
+    </>
     )
 }
 export default ItemListContainer
