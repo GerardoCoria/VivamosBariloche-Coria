@@ -40,8 +40,13 @@ const ItemDetailContainer =()=>{
         promesa
             .then((documento)=>{
                 console.log("Consulta exitosa")
-                const data = documento.data()
+                const data = {...documento.data(),id:documento.id}
+
+                console.log(data)
                 setProductos(data)
+
+                // setProductos(documento.docs.map(doc =>({...doc.data(),id:doc.id})))
+
             })
             .catch(()=>{
                 console.log("Consulta fallida")

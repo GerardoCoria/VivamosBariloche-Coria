@@ -53,7 +53,7 @@ const ItemListContainer = (props) =>{
                 }
                 else{
                 setProductos(resultado.docs.map(doc =>({...doc.data(),id:doc.id})))
-                console.log("ok")
+                console.log(productos)
                 }
             })
             .catch((error) => {
