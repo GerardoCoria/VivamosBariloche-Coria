@@ -4,6 +4,7 @@ import ItemDetailContainer from "./ItemDetailContainer"
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Cart from "./cart"
 import ComponenteDelContexto from "./CartContext"
+import Footer from "./footer"
 
 const App = () =>{
 return(
@@ -31,6 +32,7 @@ return(
                 </Switch>
         </ComponenteDelContexto>      
         </BrowserRouter>
+        {/* <Footer/> */}
     </div>
 )}
 export default App

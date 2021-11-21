@@ -14,7 +14,7 @@ const ItemDetail =({productos})=>{
     const{agregarAlCarrito}=useContext(contexto)
     
     const onAdd=(contador)=>{
-         agregarAlCarrito(contador, productos)
+        agregarAlCarrito(contador, productos)
         setRenderizar(true)
     }
 
@@ -30,20 +30,21 @@ const ItemDetail =({productos})=>{
         return(
             <div>
                  <div id ="detalle">
-                    <div>{productos.nombre}</div>
-                    <div>{productos.precio}</div>
-                    <div>{<img src={productos.img} alt="imagen"/>}</div>
+                    <div id="tituloDetail">{productos.nombre}</div>
+                    <div id="precioDetail">Precio: $ {productos.precio}</div>
+                    <div id="imagenDetail">{<img src={productos.img} alt="imagen"/>}</div>
+                    <div id="descripcionDetail">{productos.descripcion}</div>
+                    <div id="botonesDobles">
+                        <button onClick={seguirComprando} id="btnSeguir">
+                        <span className="material-icons">home</span>
+                            Seguir comprando
+                        </button>
+                        <button onClick={confirmar} id="btnConfirmar">
+                        <span className="material-icons">paid</span>
+                            Finalizar compra
+                        </button>
+                    </div> 
                 </div>
-                <div>
-                    <button onClick={seguirComprando} id="btnSeguir">
-                    <span className="material-icons">home</span>
-                        Seguir comprando
-                    </button>
-                    <button onClick={confirmar} id="btnConfirmar">
-                    <span className="material-icons">paid</span>
-                        Finalizar compra
-                    </button>
-                </div> 
             </div>
         )
         }
@@ -51,15 +52,17 @@ const ItemDetail =({productos})=>{
         return(
             <div>
                 <div id ="detalle">
-                    <div>{productos.nombre}</div>
-                    <div>$ {productos.precio}</div>
-                    <div>{<img src={productos.img} alt="imagen"/>}</div>
-                    <div className="descripcion">{productos.descripcion}</div>
-                </div>
-                <ItemCount 
+                    <div id="tituloDetail">{productos.nombre}</div>
+                    <div id="precioDetail">Precio: $ {productos.precio}</div>
+                    <div id="imagenDetail">{<img src={productos.img} alt="imagen"/>}</div>
+                    <div id="descripcionDetail">{productos.descripcion}</div>
+                
+                    <ItemCount 
                 onAdd={onAdd}
                 minimoStock={1} maximoStock={15}
-                />        
+                /> 
+                </div>
+                      
             </div>
     )
 }

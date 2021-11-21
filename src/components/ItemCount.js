@@ -6,7 +6,7 @@ const ItemCount = (props) =>{
 
     // Función para sumar y restar
     const [contador, setContador] = useState(props.minimoStock)
-    const sumar = (e) =>{
+    const sumar = () =>{
         if(contador<(props.maximoStock)){
             setContador(contador+1)
         }
@@ -25,7 +25,6 @@ const ItemCount = (props) =>{
 
     const agregar=()=>{
         props.onAdd(contador)
-        console.log(typeof contador)
     }
 
     // Retorno del componente
@@ -37,7 +36,7 @@ const ItemCount = (props) =>{
                 <button onClick={sumar} className="material-icons">add</button>
             </div>
                 <button onClick={agregar} id="btnAgregar">
-                    <span class="material-icons">add_shopping_cart</span>
+                    <span className="material-icons">add_shopping_cart</span>
                     Agregar al carrito
                 </button>
         </div>

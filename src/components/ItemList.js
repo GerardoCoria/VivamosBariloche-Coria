@@ -6,7 +6,7 @@ const ItemList = (props) =>{
     // Acá va la iteración
         return(
             <div className= "fondoRadial">
-                <h3 className="subTitulo">Algunos de nuestros productos/servicios son:</h3>
+                <h3 className="subTitulo">Nuestra oferta de productos:</h3>
                 {props.loading(Loading)}              
             <div id="productosPintados">
             {(props.productos).map((productos)=>{
