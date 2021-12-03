@@ -1,58 +1,57 @@
-import { createContext, useState } from "react"
-
-
+import { createContext, useEffect, useState } from "react"
+import GuardarStorage from "./localStorage"
 export const contexto = createContext()
 const { Provider } = contexto
 
 const ComponenteDelContexto =(props)=>{
-
-    //array para el carrito, se lee en CartWidget.js y en Cart.js
     const [cart, setCart] = useState([])
+    const [carrito, setCarrito] = GuardarStorage("carrito", [])
 
-    //funcion para agregar al carrito, se lee en ItemDetails.js
+    useEffect(()=>{
+    setCart(carrito)
+    },[carrito])
+    
     const isInCart = (id)=>{
         return cart.find(productos=> productos.id === id)
     }
-
     const agregarAlCarrito = (contador, productos)=>{
         if (isInCart(productos.id)){
-            setCart(cart.map(item=>(
-            item.id === productos.id ? {...item, contador: item.contador + contador} : item)))
-            console.log("ya estaba y sumé cantidad")
+            setCart(carrito.map(item=>(
+                item.id === productos.id ? {...item, contador: item.contador + contador} : item)))
+            setCarrito(cart.map(item=>(
+                item.id === productos.id ? {...item, contador: item.contador + contador} : item)))
         }
         else{
-             setCart([...cart, {
+            setCart([...carrito, {
                 id: productos.id,  
                 contador: contador,
                 nombre: productos.nombre,
                 precio: productos.precio,
                 img: productos.img
             }])
-            console.log("no estaba y lo agregue")
-        }
-        }
-
-    //para eliminar del carrito
+            setCarrito([...carrito, {...productos, contador}])            
+        }}
     const eliminarDelCarrito = (id)=>{
         const cartAux=cart.filter(productos=> productos.id !== id)
         setCart(cartAux)
-        console.log("eliminado del carrito!!")
-        console.log(id)
+        setCarrito(carrito.filter(productos=> productos.id !== id))
     }
-    //para resetear el carrito
     const vaciarCarrito = ()=>{
-        console.log("vaciando carrito!!")
         setCart([]) 
+        setCarrito([])
     }   
-
+    const minimoStock=1
+    const maximoStock=10
 
     const valorDelProvider={
-        cart: cart, //para el lenght en cartWidget
-        agregarAlCarrito: agregarAlCarrito, //para agregar al carrito en ItemDetails.js
+        cart: cart, 
+        carrito: carrito,
+        agregarAlCarrito: agregarAlCarrito, 
         eliminarDelCarrito: eliminarDelCarrito,
-        vaciarCarrito: vaciarCarrito
+        vaciarCarrito: vaciarCarrito,
+        minimoStock: minimoStock,
+        maximoStock: maximoStock
     }
-
     return(
     <Provider value={valorDelProvider}>
         {props.children}

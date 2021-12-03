@@ -1,13 +1,12 @@
 import { useState } from "react"
-
+import {contexto} from "./CartContext"
+import { useContext } from "react"
 
 const ItemCount = (props) =>{
-
-
-    // Función para sumar y restar
-    const [contador, setContador] = useState(props.minimoStock)
+    const {minimoStock, maximoStock} = useContext(contexto)
+    const [contador, setContador] = useState(minimoStock)
     const sumar = () =>{
-        if(contador<(props.maximoStock)){
+        if(contador<(maximoStock)){
             setContador(contador+1)
         }
         else{
@@ -15,19 +14,16 @@ const ItemCount = (props) =>{
         }
     }
     const restar = () =>{
-        if(contador>(props.minimoStock)){
+        if(contador>(minimoStock)){
             setContador(contador-1)
         }
         else{
             return false
         }
     }
-
     const agregar=()=>{
         props.onAdd(contador)
     }
-
-    // Retorno del componente
     return(
         <div id="botonera">
             <div id="contador">
@@ -35,10 +31,10 @@ const ItemCount = (props) =>{
                 <input value={contador} readOnly/>
                 <button onClick={sumar} className="material-icons">add</button>
             </div>
-                <button onClick={agregar} id="btnAgregar">
-                    <span className="material-icons">add_shopping_cart</span>
-                    Agregar al carrito
-                </button>
+            <button onClick={agregar} id="btnAgregar">
+                <span className="material-icons">add_shopping_cart</span>
+                Agregar al carrito
+            </button>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 const Item = (props) =>
-    <div>
-        <div>{props.pintar}</div>
-    </div>
+    <>
+        {props.pintar}
+    </>
 export default Item

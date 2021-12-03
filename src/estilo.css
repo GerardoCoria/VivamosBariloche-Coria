@@ -1,10 +1,8 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Londrina Solid', cursive; */
     font-family: 'Sen', sans-serif;
 }
 
@@ -13,6 +11,8 @@
     --colorVerdoso: #042e0d;
     --colorVioleta: #3d0940;
     --chocolate: #a3580c;
+    --fondoRadial: radial-gradient(circle, #0dabc7, #052e05);
+
 }
 
 a:link, a:visited, a:active {
@@ -21,7 +21,7 @@ a:link, a:visited, a:active {
 
 #encabezado{
     background: linear-gradient(to bottom, var(--chocolate), var(--colorVioleta));
-    height: 13vw;
+    height: 14vw;
 }
 
 #logo{
@@ -45,27 +45,17 @@ a:link, a:visited, a:active {
 
 nav{
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly
 }
 
 nav a{
     background-color: white;
     border-radius: 20px;
-    /* padding: 0vw 2vw;
-    margin: 0 1vw; */
     font-size: 1.7vw;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     min-width: 15vw;
 }
-
-
-/* #encabezado a:first-child{
-    background-color: none;
-} */
-
 
 .active{
     background-color :#c8c7ab;
@@ -75,29 +65,12 @@ nav a{
 
 }
 
-/* #intro{
-    background-image: url(media/foto1.jpg);
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 30vw; */
-
-
-/* #intro h1{
-    font-size: 4.6vw;
-    text-align: center;
-    color: white;
-} */
-
 #intro2{
+    background-color: var(--colorAzulado);
     background-image: url(media/centro-civico.jpg);
-}
-
-#intro2{
-    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 30vw;
+    height: 20vw;
 }
 
 #intro2 p{
@@ -108,7 +81,7 @@ nav a{
 
 #intro3{
     display: flex;
-    padding: 2vw 0;
+    padding: .5vw 0;
     justify-content: space-evenly;
     background-color: #721c7c;
     color: white;
@@ -122,28 +95,15 @@ nav a{
 }
 
 #intro3 ul li .material-icons{
-    margin: 0;
+    margin: 1vw;
 }
 
 #intro3 ul li:last-child{
     margin-right: 0;
 }
 
-/* #intro2 ul,  */
-/* padding: 0 15vw;
-/* background-color: #ffffff70; */
-/* line-height: 1.5;
-list-style: none;  */
-
-
-/* li{
-    display: flex;
-    align-items: center;
-} */
-
 .material-icons{
     font-size: 4vw;
-    margin-right: 2vw;
 }
 
 p span{
@@ -164,6 +124,8 @@ p span{
 
 #contadorCarrito{
     display: inline-flex;
+    position: relative;
+    bottom: 1vw;
     background: red;
     color: white;
     font-weight: bold;
@@ -174,36 +136,22 @@ p span{
     align-items: center;
     justify-content: center;
     margin: 1vw
-
 }
 
 #botonera {
-    /* display: grid; */
-    display: flex;
-    /* background-color: var(--colorAzulado); */
-    /* margin-top: 5vw; */
-    width: 90%;
-    justify-content: center;
-    /* flex-direction:row; */
-    flex-direction: column;
-    border-radius: 20px;
-    grid-area: botones;
-    margin: auto;
-    /* grid-template-areas:
-    "h3"
-    "parr"
-    "botones"
-    "confirmar"; */
+     display: flex;
+     width: 90%;
+     flex-direction: column;
+     grid-area: botones;
+     margin: auto;
 }
 
 #botonera h3{
-    /* grid-area: h3; */
     font-size: 2.5vw;
     text-align: center;
 }
 
 #botonera p{
-    /* grid-area: parr; */
     background-color: inherit;
     font-size: 2vw;
     margin: 0 5vw;
@@ -212,57 +160,38 @@ p span{
 #contador{
     display: flex;
     margin: auto;
-    align-content: center;
 }
 
 #contador input{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     font-size: 3vw;
-    background-color: white;
     width: 5vw;
     height: 5vw;
-    border-radius: 50%;
+    border-radius: 20px;
     border: none;
-    outline: none;
 }
 
 #contador button{
-    /* width: 5vw;
-    height: 5vw; */
     padding: .6vw;
-    display: inline-flex;
-    margin: 0;
-    border-radius: 50%;
+    border-radius: 20px;
     margin: 0 2vw;
     background: #af7d09;
 }
 
-/* #btnConfirmar{
-    grid-area: confirmar;
-    height: 3vw;
-    width: 10vw;
-    margin: auto;
-    justify-self: center;
-    font-size: 2vw;
-} */
 #btnAgregar{
     display:flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    margin: 1vw auto;
     background: #b484b2;
     border-radius: 20px;
-    /* padding: 1vw; */
     font-size: 1.6vw;
-    width: 50%;
+    width: 80%;
 }
 
 #botonesDobles{
     grid-area: botones;
+    align-self: center;
 }
 
 #btnSeguir{
@@ -274,7 +203,7 @@ p span{
     color: white;
     border-radius: 20px;
     font-size: 1.6vw;
-    width: 50%;
+    width: 80%;
 }
 
 #btnConfirmar{
@@ -286,29 +215,24 @@ p span{
     color: white;
     border-radius: 20px;
     font-size: 1.6vw;
-    width: 50%;
+    width: 80%;
 }
 
 .loading{
     display: flex;
     flex-direction: column;
+    background: var(--fondoRadial);
+    height: 100vh;
 }
 
 .loading img{
-       /* position: relative; */
-       width: 20vw;
-       left: 35vw;
-       /* top: 5vw; */
-       margin: auto;
+       width: 30vw;
+       margin: 2vw auto;
 }
 
-#cargando2{
-    color: black;
-}
-
-#cargando{
+#cargando, #cargando2, #cargando3{
     align-self: center;
-    font-size: 2vw;
+    font-size: 4vw;
     font-weight: bold;
     color: white;
     background-color: transparent !important;
@@ -316,102 +240,117 @@ p span{
 
 .subTitulo{
     text-align: center;
-    font-size: 3vw;
-    color: white
-}
-
-.fondoRadial{
-    background: radial-gradient(circle, #0dabc7, #052e05);
-    height: auto;
+    font-size: 4vw;
+    color: white;
+    height: 0;
 }
 
 #productosPintados{
     display: flex;
-    height: auto;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /* margin: 0 5vw;     */
-    /* background: radial-gradient(circle, #0dabc7, #052e05); */
-
+    background: var(--fondoRadial);
+    padding-top: 6vw;
 }
 
 .itemsIntro{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
     background: black;
-    color: white;
     width: 15vw;
     height: 30vw;
     margin: 1vw 0;
-    font-size: 2.5vw;
     border-radius: 20px;
-    justify-content: space-evenly;
 }
 
 .itemsIntro img{
-    height: 13vw;
-    width: 13vw;
+    height: 12vw;
+    width: 12vw;
     object-fit: cover;
-    margin: 2vw;
+    margin: 1.5vw;
+    border-radius: 20px 20px 0 0;
 }
 
-.itemsIntro span{
+#introNombre{
     text-align: center;
     font-size: 2vw;
+    color: #fff;
+    height: 9vw;
 }
 #btnVerMas{
+    display: flex;
     background: black;
     border: none;
-}
-
-#txtVerMas{
-    display: flex;
-    justify-content: center;
+    color: #c4c463;
     align-items: center;
-    width: 100%;
+    margin: auto;
     font-size: 2vw;
-    background: black;
-    color:#c4c463
 }
 
-/* #btnVerMas .material-icons{
-    margin-right: 0
-} */
+#btnVerMas .material-icons{
+    margin-right: 1vw;
+}
 
+footer{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--colorVioleta), var(--chocolate));
+    color: #fff;;
+}
+
+#redes{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    font-size: 2vw;
+    align-items: center;
+}
+
+footer img{
+    width: 2vw;
+    height:2vw;
+    margin: 0.5vw;
+}
+
+#info{
+    width: 60%;
+    text-align: center;
+}
+
+#btnArriba{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+}
+
+#btnArriba button{
+    display: flex;
+    font-size: 1.5vw;
+    background: transparent;
+    border: none;
+    color: wheat;
+    flex-direction: column;
+    align-items: center;
+}
 
 #itemDetallado{
-    display: flex;
-    /* position: absolute; */
-    margin: 0;
-    height: 100vh;
-    width: 100%;
+    height: auto;
     background: linear-gradient(to right, #0dabc7, #052e05);
-    color: white;
-    justify-content: center;
-    background-color: var(--colorVerdoso);
+    padding: 3vw 0;
 }
 
 #detalle {
     display: grid;
-    grid-template-areas: 
-    "tituloDetail tituloDetail"
-    "imagenDetail precioDetail"
-    "imagenDetail descripcionDetail"
-    "botones botones";
+    grid-template-areas: "tituloDetail tituloDetail"
+        "imagenDetail precioDetail"
+        "imagenDetail descripcionDetail"
+        "imagenDetail botones";
     grid-template-rows: auto 20% auto auto;
-    grid-template-columns: 50% 50%;
-    /* flex-direction: column; */
-    width: 60vw;
-    /* justify-content: center;
-    align-items: center; */
-    color:black;
+    grid-template-columns: 45% 55%;
+    width: 80vw;
     font-size: 4vw;
     background-color: #c9ac8f;
     border-radius: 20px;
     text-align: center;
-    margin-top: 2vw;
+    margin: auto;
 }
 
 #tituloDetail{
@@ -438,10 +377,10 @@ p span{
 }
 
 #detalle img{
-    width: 25vw;
-    height: 25vw;
+    width: 30vw;
+    height: 30vw;
     object-fit: cover;
-    margin: 1vw;
+    margin: 2vw;
 }
 
 .descripcion{
@@ -454,14 +393,23 @@ p span{
     color: #761380;
 }
 
+#cartPage{
+    background-color:var(--chocolate);
+    background-image: url(media/wallpaper.jpg);
+    background-position: bottom;
+    padding-bottom: 3vw;
+}
+
 #tituloCarrito{
     text-align: center;
     font-size: 3vw;
+    color: #fff;
 }
 
 #subTituloCarrito{
     text-align: center;
     font-size: 2vw;
+    color: #fff;
 }
 
 #divCarrito{
@@ -476,23 +424,36 @@ p span{
     font-size: 2vw;
 }
 
-#btnMas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #054609;
-    /* border-radius: 20px; */
-    font-size: 2vw;
+#divCarrito2{
+    width: 30vw;
+}
+
+#divCarrito img{
+    object-fit: cover;
+}
+
+#botonesCart{
+    width: 15vw;
+    text-align: center;
+    font-size: 1vw;
+}
+
+#btnCartMenos{
+    background: #f00;
     color: #fff;
-    padding: 0 2vw;
+    margin-right: 1vw;
+}
+
+#btnCartMas{
+    background: #002f00;
+    color: #fff;
+    margin-top:1vw
 }
 
 #btnEliminar{
     display: inline-flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
     width: 7vw;
     height: 7vw;
     border-radius: 50%;
@@ -509,7 +470,6 @@ p span{
 #btnCart{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
 }
 
 #btnIrAForm{
@@ -522,7 +482,6 @@ p span{
     padding: 1vw;
     color: #fff;
     width: 25vw;
-
 }
 
 #btnVaciar{
@@ -531,7 +490,6 @@ p span{
     align-items: center;
     border-radius: 20px;
     background: red;
-    /* margin: auto; */
     color: white;
     font-size: 2vw;
     padding: 1vw;
@@ -541,43 +499,118 @@ p span{
 #cartVacio{
     font-size: 5vw;
     text-align: center;
-    margin-top: 5vw;
 }
 
 #imgVacio{
-    width: 40%;
+    width: 36%;
     margin-left: 30%;
 }
 
 #divTotal{
     display: flex;
-    background: black;
+    background: #789c35;
     color: white;
     width: 80%;
     margin: 2vw auto;
-    text-align: center;
+    padding: .5vw 0;
     font-size: 3vw;
     border-radius: 20px;
     justify-content: space-evenly;
 }
 
-#sumaTotal{
-    background: #cc9348;
-    padding: 0 2vw;
-}
-
 #btnIrInicio{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     background: green;
     padding: 1vw 2vw;
     border-radius: 20px;
-    margin-left: 35%;
+    margin: 0 0 2vw 35%;
 }
 
 #txtIrInicio{
     display: flex;
     font-size: 3vw;
     color: white;
+}
+
+#error{
+    font-size: 3vw;
+    text-align: center;
+    background-color: #fff;
+    padding-bottom: 15vw;
+}
+
+#formPage{
+    background: var(--chocolate);
+    background-image: url(media/wallpaper2.jpg);
+    padding: 1vw 0 3vw 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#tituloForm{
+    text-align: center;
+    font-size: 4vw;
+    color: #fff;
+}
+
+#formListado{
+    background: #89b9a9;
+    border-radius: 20px;
+    width: 60%;
+    margin: auto;
+    padding: 1vw;
+    font-size: 2vw;
+}
+
+#formListado button{
+    border-radius: 20px;
+    font-size: 2vw;
+    padding: 1vw;
+    width: 60%;
+    margin: 2% 20%;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 2vw auto;
+    background: #154c5e;
+    border-radius: 20px;
+}
+
+#formulario input{
+    background: #d3d3d3;
+    width: 90%;
+    margin: 1vw auto;
+    padding: 1vw;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 2vw;
+}
+
+#formulario button{
+    display: flex;
+    background: #8bc34a;
+    width: 90%;
+    margin: 1vw auto;
+    padding: 1vw;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 2vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#compraHecha{
+    display: flex;
+    font-size: 3vw;
+    padding: 8vw 0;
+    width: 100%;
+}
+
+.compraLista{
+    color: #9c27b0;
+    font-weight: bold;
 }

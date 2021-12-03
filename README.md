@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9cbe0b25-ebba-4bed-8c7f-e275960b0337/deploy-status)](https://app.netlify.com/sites/adoring-shaw-830310/deploys)
+# Información de la aplicación
+"Vivamos Bariloche!" es el proyecto final, desarrollado para el curso de React JS de CoderHouse.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripcion general
+#### Objetivo de la aplicación
+Esta aplicación pretende brindar una experiencia agradable al usuario. 
 
-## Available Scripts
+#### Contenido de la aplicación
+Contiene una página de inicio, otra para las productos (ítems), otra para las categorías de los ítems (secciones), y otra para el carrito de compras que posee un resumen de la compra y un formulario para realizar una compra.
+Es una aplicación con una estructura básica, un e-commerce, cuyo fin es la compra-venta de productos típicos de la región de Bariloche (Provincia de Río Negro, Argentina). 
+Permite seleccionar cualquier producto con la cantidad deseada. E incluso esta cantidad se puede incrementar dentro de carrito de compras (Cart).
 
-In the project directory, you can run:
+## Funcionamiento del e-commerce
+1. Al iniciar la aplicación, se muestra la página de inicio.
+2. Al hacer click en una categoría, se muestra la lista de productos de esa categoría.
+3. Al hacer click en un producto, se muestra la información del producto.
+4. Al hacer click en el botón "Agregar al carrito" del producto, se agrega el producto al carrito de compras.
+5. Al hacer click en el botón "Comprar" del carrito de compras, se muestra el formulario para realizar la compra.
+6. Al hacer click en el botón "Realizar compra" del formulario, se realiza la compra.
 
-### `npm start`
+## Flujo de compra
+adjuntar el gif aca
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Uso e instalación
+Para su uso, se debe instalar el paquete de npm:
+```
+npm install
+```
+Para ejecutar la aplicación, se debe ejecutar el comando:
+```
+npm start
+```
+#### NodeJS
+Se ejecuta NodeJS para descargar los módulos de React y React-Router, usando la herramienta npm. 
+Y para "levantar" la aplicación, esto es, inicializarla. 
+Para acceder a la aplicación desde el navegador, desde la carpeta de la aplicación ejecute:
+```
+npm start
+```
+Acceda a la aplicación desde la URL:
+[localhost:3000](localhost:3000)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Si no posee NodeJS, se debe instalarlo:
+1. Descargar NodeJS: https://nodejs.org/es/
+2. Descargar la última versión de Node.js
+3. Ejecutar el archivo descargado.
 
-### `npm test`
+Para instalar la aplicación React, instalé el paquete de npm:
+```
+npm install -g create-react-app
+```
+Para crear la aplicación React, ejecuté el comando:
+```
+create-react-app nombre-de-la-aplicación
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+para usar la aplicación la tenes que clonar 
+comando clonacion git
+entras a la carpeta 
+levantaas el servidor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Librerías usadas
+#### React
+React JS es una biblioteca para desarrollo web. Busca darle una alta performance a la aplicación web.
 
-### `npm run eject`
+#### React Router DOM
+Para usarlo, descargué el paquete de npm:
+```
+npm install react-router-dom
+```
+Una vez instalado, se debe importar en el archivo que se desee usar React Router.
+Luego de instalado React Router DOM, importé Switch para proyectar las vistas navegadas. Para navegar, envolví la aplicación en BrowseRouter e importé Link.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Establecí una navegación dinámica con Id:
+```
+<Route path="/seccion/:id">
+    <ItemListContainer/>
+</Route>
+<Route path="/item/:id">
+    <ItemDetailContainer/>
+</Route>
+```
+A estos Id los recibo como parámetros con UseParams.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Firebase
+Empleé este servicio provisto por Google para la base de datos de la aplicación. En ella guardé los datos de los productos y las categorías.
+Este servicio es importante dado que me permite realizar un filtrado por categoría. Además, me permite realizar una búsqueda de productos de forma sencilla.
+Y me genera un Id único autogenerado para la compra. 
+Para usar Firebase, vaya a la [página de Firebase](https://firebase.google.com/) y con su cuenta de Google configure la consola. Luego cree un proyecto y acceda al panel de Firestore.
+La instalación de Firebase se realiza con el comando:
+```
+npm install firebase@8.9.1 --save
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+La integración de Firebase fue realizada a través del archivo firebase.js con las api keys.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### CSS
+Aunque CSS no es una librería (es un lenguaje de diseño gráfico para dar estilos a nuestras webs) consideré adecuado sólo usar CSS (y ningún framework o librería) para ejercitar mi habilidad en CSS. Además, cada framework tiene sus ventajas pero también sus limitaciones. Por lo que, al pensar en ideas mas creativas, mejor usar sólo CSS. Tal como el caso de Javascript Vanilla, la mejor forma de aprender es sin usar librerías o frameworks externos.
 
-## Learn More
+## Convenciones
+Como buenas practicas, consideré las siguientes:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### CamelCase
+Empleé CamelCase para los nombres de los eventos, para los id y clases de CSS.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Uso del Const
+Las funciones se declaran con la palabra reservada "const". Ello es una convención para evitar cambiar la referencia con la que fueron inicializadas. Ello no significa que esa referencia tenga el mismo contenido, de hecho, puedo cambiarlo
 
-### Code Splitting
+#### Let
+Sólo usé "let" para declarar variables.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Arrow Functions
+Busqué dar simplicidad al código usando arrow functions.
 
-### Analyzing the Bundle Size
+#### Sugar syntax
+Usé la sintaxis sugar para los operadores ternarios y en el spread operator.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### JSX
+Empleé etiquetas de auto-cerrado para los componentes, tal como se sugiere en la documentación de React.
 
-### Making a Progressive Web App
+#### Class y ClassName
+Para las clases de CSS, usé la palabra clave "className" en lugar de "class". Esto es una convención para evitar confusiones con el nombre de la propiedad "class".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Propiedades
+Para las propiedades de los componentes, usé la palabra "props".
 
-### Advanced Configuration
+#### Hooks
+Implementé el uso del Local Storage para guardar información del carrito, ante un cierre de la ventana o recarga de la página.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Promesas
+Usé las promesas para obtener los datos de Firebase.
 
-### Deployment
+#### Error de tipo 404
+Si la aplicación no encuentra una página, se muestra un error 404 con el componente Error404.js.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Keys
+Identifiqué al Div contenedor de cada producto mapeado (esto es con la función map) con una clave única. De esa forma no habrá problemas al actualizar la lista de productos.
 
-### `npm run build` fails to minify
+#### Contexto
+Empleé el contexto para el carrito de compras. Para esto, usé el hook useContext. Y allí guardé la información del producto elegido y su cantidad.
+Configuré el nodo proveedor desde App.js para que sea accesible desde cualquier componente.
+En el componente Contexto guardé tanto el mínimo (1) como el máximo (10) de productos que se puede elegir para agregar al carrito.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Rendering condicional
+Para renderizar, según la complejidad de cada componente, empleé tanto los operadores ternarios como la función if-else. 
