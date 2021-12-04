@@ -20,6 +20,8 @@ Permite seleccionar cualquier producto con la cantidad deseada. E incluso esta c
 
 ## Flujo de compra
 ![flujo de compra](https://github.com/GerardoCoria/VivamosBariloche-Coria/blob/main/src/media/Multimedia2.gif?raw=true)
+Acceda a la aplicación desde la URL:
+[localhost:3000](/localhost:3000)
 
 ## Uso e instalación
 Para su uso, se debe instalar el paquete de npm:
@@ -41,9 +43,7 @@ $ npm start
 
 #### NodeJS
 Se ejecuta NodeJS para descargar los módulos de React y React-Router, usando la herramienta npm. 
-Y para "levantar" la aplicación, esto es, inicializarla. 
-Acceda a la aplicación desde la URL:
-[localhost:3000](localhost:3000)
+Y para "levantar" la aplicación, esto es, inicializarla.
 
 Si no posee NodeJS, se debe instalarlo:
 1. Descargar NodeJS: https://nodejs.org/es/

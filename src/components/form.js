@@ -78,11 +78,11 @@ const Form = () => {
                 <h1 id="tituloForm">Formulario de compra</h1>
                 <div id="formListado">
                     <p>Ud. va a adquirir:</p>
-                    {cart.map((producto) => {
+                    {cart.map((producto, i) => {
                         return(
-                            <>
+                            <div key={i}>
                                 <span>({producto.contador})</span> unidad/es de <span>{producto.nombre}</span><br/>
-                            </>
+                            </div>
                         )
                     })}
                     <p>Por un total de: <strong>${cart.reduce((total,producto)=>total+producto.precio*producto.contador,0)}</strong></p>

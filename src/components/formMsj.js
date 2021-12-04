@@ -7,8 +7,8 @@ const FormMsj =(props)=>{
                         <div>
                                 <p><strong>{props.usuario.nombre}</strong>, su compra se ha realizado con éxito!</p>
                                 <p>Gracias por su compra de:</p>
-                                {(props.cartMsj).map((producto)=>{
-                                return(<p className="compraLista">{producto.nombre}</p>)
+                                {(props.cartMsj).map((producto, i)=>{
+                                return(<p key={i} className="compraLista">{producto.nombre}</p>)
                                 })}
                                 <p>Su numero de orden es: <strong>#{props.id}</strong></p>
                                 <p>¡Que lo disfrutes!</p>
