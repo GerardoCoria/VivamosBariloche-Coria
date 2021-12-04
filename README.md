@@ -20,7 +20,7 @@ Permite seleccionar cualquier producto con la cantidad deseada. E incluso esta c
 6. Al hacer click en el botón "Realizar compra" del formulario, se realiza la compra.
 
 ## Flujo de compra
-![flujo de compra](https://i.imgur.com/XQQQQQQ.png)
+![flujo de compra](https://github.com/GerardoCoria/VivamosBariloche-Coria/blob/main/src/media/Multimedia2.gif?raw=true)
 
 ## Uso e instalación
 Para su uso, se debe instalar el paquete de npm:
